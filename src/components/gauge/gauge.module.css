@@ -1,0 +1,30 @@
+    .wrapper {
+      position: relative;
+    }
+
+    .gauge {
+      width: 100%;
+      min-width: 100px;
+    }
+
+    .value {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      color: white;
+      font-size: 3rem;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    circle {
+      transition: all 150ms;
+
+      &.stroke {
+        transform: rotate(-87.9537deg);
+        transform-origin: 50% 50%;
+        stroke-linecap: round;
+        stroke: url(#gradient);
+        fill: none;
+      }
+    }

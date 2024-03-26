@@ -1,0 +1,20 @@
+.App-navbar {
+    padding: 30px 40px;
+    text-align: right;
+    background-color: var(--main-background);
+}
+
+.App-logo {
+    height: 50px;
+    pointer-events: none;
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
