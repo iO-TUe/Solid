@@ -1,7 +1,10 @@
 import styles from './header.module.css'
 
 export default function Header() {
-    return (
+    console.log("Script: Header")
+
+    return <>
+        {console.log("Render: Header")}
         <nav class={styles['App-navbar']}>
             <svg class={styles["App-logo"]} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 166 155.3">
                 <path d="M163 35S110-4 69 5l-3 1c-6 2-11 5-14 9l-2 3-15 26 26 5c11 7 25 10 38 7l46 9 18-30z" fill="#76b3e1" />
@@ -21,5 +24,5 @@ export default function Header() {
                     <stop offset="0" stop-color="#4377bb" /><stop offset=".5" stop-color="#1a336b" /><stop offset="1" stop-color="#1a336b" />
                 </linearGradient><path d="M114 115a45 45 0 00-48-15L4 120s53 40 94 30l3-1c17-5 23-21 13-34z" fill="url(#d)" /></svg>
         </nav>
-    )
+    </>
 }

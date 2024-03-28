@@ -1,6 +1,7 @@
 import { createSignal } from "solid-js"
+import Button from './Button'
+import Gauge from './Gauge'
 import styles from './counter.module.css'
-import Gauge from './gauge'
 
 export default function Counter(props: { initialValue: number }) {
     const [count, setCount] = createSignal(props.initialValue)
@@ -12,26 +13,16 @@ export default function Counter(props: { initialValue: number }) {
         if (count() > 0) setCount(count() - 1)
     }
 
-    document.addEventListener("keydown", ({ code }) => {
-        switch (code) {
-            case "ArrowRight":
-                return add()
-            case "ArrowLeft":
-                return subtract()
-        }
-    })
+    console.log("Script: Counter")
 
-    return (
+    return <>
+        {console.log("Render: Counter")}
         <div class={styles['wrapper']}>
-            <button class={styles["button"]} disabled={count() === 0} onClick={subtract} aria-label='sub'>
-                -
-            </button>
+            <Button disabled={count() === 0} fn={subtract} sign="-" />
             <Gauge value={count()} recurse={false} />
-            <button class={styles["button"]} disabled={count() === 100} onClick={add} aria-label='add'>
-                +
-            </button>
+            <Button disabled={count() === 100} fn={add} sign="+" />
         </div>
-    )
+    </>
 };
 
 export const celebrate = async () => {

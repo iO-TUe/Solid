@@ -4,15 +4,18 @@ import styles from './gauge.module.css'
 const Gauge: Component<{ value: number, recurse: boolean }> = (props) => {
   const [bool, setBool] = createSignal(false)
 
+  console.log("Script: Gauge")
+
   setTimeout(() => setBool(props.recurse), 10)
 
   return <>
+    {console.log("Render: Gauge")}
     <div role='feed' class={styles.wrapper} onclick={() => setBool(true)} >
       <svg viewBox="0 0 120 120" class={styles.gauge}>
         <defs>
           <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#18B6F6" />
-            <stop offset="1000%" stop-color="#AC7FF4" />
+            <stop offset="0%" stop-color="#335d9c" />
+            <stop offset="1000%" stop-color="#90c3e8" />
           </linearGradient>
         </defs>
 
