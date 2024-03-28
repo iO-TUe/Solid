@@ -1,7 +1,7 @@
 import type { Component } from 'solid-js'
 import styles from './App.module.css'
 import Counter from './components/Counter'
-import Header from './components/headertmp'
+import Header from './components/Header'
 
 const App: Component = () => {
   console.log('Script: App')
