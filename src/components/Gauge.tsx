@@ -6,7 +6,7 @@ const Gauge: Component<{ value: number, recurse: boolean }> = (props) => {
 
   console.log("Script: Gauge")
 
-  setTimeout(() => setBool(props.recurse), 10)
+  setTimeout(() => setBool(props.recurse), 0)
 
   return <>
     {console.log("Render: Gauge")}
