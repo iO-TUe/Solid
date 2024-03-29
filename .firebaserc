@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "io-tue"
-  }
+  },
+  "targets": {
+    "io-tue": {
+      "hosting": {
+        "Solid": [
+          "io-solid"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }
