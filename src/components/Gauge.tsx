@@ -6,9 +6,9 @@ const Gauge: Component<{ value: number, recurse: boolean }> = (props) => {
 
   setTimeout(() => setBool(props.recurse), 0)
 
-  console.log("Script: Gauge", `[${props.value}]`)
+  console.log("Script: Gauge")
   return <>
-    {console.log("Render: Gauge", `[${props.value}]`)}
+    {console.log("Render: Gauge")}
     <div role='feed' class={styles.wrapper} onclick={() => setBool(true)} >
       <svg viewBox="0 0 120 120" class={styles.gauge}>
         <defs>
@@ -26,7 +26,7 @@ const Gauge: Component<{ value: number, recurse: boolean }> = (props) => {
       </svg>
       <span class={styles.value}>{props.value}</span>
     </div>
-    {(bool() && props.value < 100) && <div class="recurse"><Gauge value={props.value + 1} recurse={true} /><Gauge value={props.value + 5} recurse={true} /></div>}
+    {(bool() && props.value < 100) && <div class="recurse"><Gauge value={props.value} recurse={true} /><Gauge value={props.value} recurse={true} /></div>}
   </>
 }
 
