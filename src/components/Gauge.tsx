@@ -26,7 +26,7 @@ const Gauge: Component<{ value: number, recurse: boolean }> = (props) => {
       </svg>
       <span class={styles.value}>{props.value}</span>
     </div>
-    {(bool() && props.value < 100) && <div class="recurse"><Gauge value={props.value} recurse={true} /><Gauge value={props.value} recurse={true} /></div>}
+    {(bool() && props.value < 100) && <div class="recurse"><Gauge value={props.value + 1} recurse={true} /><Gauge value={props.value + 5} recurse={true} /></div>}
   </>
 }
 

@@ -4,13 +4,13 @@ import Counter from './components/Counter'
 import Header from './components/Header'
 
 const App: Component = () => {
-  console.log('Script: App')
+  // console.log('Script: App')
   return <>
-    {console.log('Render: App')}
+    {/* {console.log('Render: App')} */}
     <div class="App">
       <Header />
       <main class={styles["App-main"]}>
-        <Counter initialValue={95} />
+        <Counter initialValue={80} />
       </main>
     </div>
   </>
