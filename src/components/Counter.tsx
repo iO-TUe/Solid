@@ -1,12 +1,11 @@
-import { createSignal } from "solid-js"
-import Button from './Button'
-import Gauge from './Gauge'
-import styles from './counter.module.css'
+import { createSignal, For } from "solid-js"
+import Button from './button'
+import './counter.css'
+import Gauge from './gauge'
 
-export default function Counter(props: { initialValue: number }) {
+export default function Counter(props: { initialValue: number, maxValue: number, recurse: boolean }) {
     const [count, setCount] = createSignal(props.initialValue)
     const add = () => {
-        if (count() === 99) celebrate()
         if (count() < 100) setCount(count() + 1)
     }
     const subtract = () => {
@@ -17,62 +16,14 @@ export default function Counter(props: { initialValue: number }) {
 
     return <>
         {/* {console.log("Render: Counter")} */}
-        <div class={styles['wrapper']}>
+        <div class="wrapper">
             <Button disabled={count() === 0} fn={subtract} sign="-" />
-            <Gauge value={count()} recurse={false} />
+            <div class="counters">
+                <For each={[...Array(props.recurse ? 1 : props.maxValue)]}>{() =>
+                    <Gauge value={count()} max={props.maxValue} recurse={false} />
+                }</For>
+            </div>
             <Button disabled={count() === 100} fn={add} sign="+" />
         </div>
     </>
 };
-
-export const celebrate = async () => {
-    const defaults = {
-        spread: 360,
-        ticks: 70,
-        gravity: 0,
-        decay: 0.95,
-        startVelocity: 30,
-        colors: ['006ce9', 'ac7ff4', '18b6f6', '713fc2', 'ffffff'],
-        origin: {
-            x: 0.5,
-            y: 0.35,
-        },
-    }
-
-    function loadConfetti() {
-        return new Promise<(opts: any) => void>((resolve, reject) => {
-            if ((globalThis as any).confetti) {
-                return resolve((globalThis as any).confetti as any)
-            }
-            const script = document.createElement('script')
-            script.src =
-                'https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js'
-            script.onload = () => resolve((globalThis as any).confetti as any)
-            script.onerror = reject
-            document.head.appendChild(script)
-            script.remove()
-        })
-    }
-
-    const confetti = await loadConfetti()
-
-    function shoot() {
-        confetti({
-            ...defaults,
-            particleCount: 80,
-            scalar: 1.2,
-        })
-
-        confetti({
-            ...defaults,
-            particleCount: 60,
-            scalar: 0.75,
-        })
-    }
-
-    setTimeout(shoot, 0)
-    setTimeout(shoot, 100)
-    setTimeout(shoot, 200)
-    setTimeout(shoot, 300)
-    setTimeout(shoot, 400)
-}

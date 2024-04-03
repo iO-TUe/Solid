@@ -1,12 +1,12 @@
-import styles from './header.module.css'
+import './header.css'
 
 export default function Header() {
     // console.log("Script: Header")
 
     return <>
         {/* {console.log("Render: Header")} */}
-        <nav class={styles['App-navbar']}>
-            <svg class={styles["App-logo"]} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 166 155.3">
+        <nav class='App-navbar'>
+            <svg class="App-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 166 155.3">
                 <path d="M163 35S110-4 69 5l-3 1c-6 2-11 5-14 9l-2 3-15 26 26 5c11 7 25 10 38 7l46 9 18-30z" fill="#76b3e1" />
                 <linearGradient id="a" gradientUnits="userSpaceOnUse" x1="27.5" y1="3" x2="152" y2="63.5">
                     <stop offset=".1" stop-color="#76b3e1" /><stop offset=".3" stop-color="#dcf2fd" /><stop offset="1" stop-color="#76b3e1" />

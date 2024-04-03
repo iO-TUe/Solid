@@ -1,15 +1,18 @@
 /* @refresh reload */
-import { render } from 'solid-js/web';
+import { Route, Router } from '@solidjs/router'
+import { render } from 'solid-js/web'
+import Counter from './components/counter'
+import Header from './components/header'
+import './index.css'
 
-import './index.css';
-import App from './App';
-
-const root = document.getElementById('root');
-
-if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
-  throw new Error(
-    'Root element not found. Did you forget to add it to your index.html? Or maybe the id attribute got misspelled?',
-  );
-}
-
-render(() => <App />, root!);
+render(() =>
+  <div class="App">
+    <Header />
+    <main class="App-main">
+      <Router>
+        <Route path='/load' component={() => <Counter initialValue={50} maxValue={100} recurse={false} />} />
+        <Route path='/' component={() => <Counter initialValue={80} maxValue={13} recurse={true} />} />
+      </Router>
+    </main>
+  </div>
+  , document.getElementById('app')!)
