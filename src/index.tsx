@@ -8,6 +8,7 @@ import './index.css'
 render(() =>
   <div class="App">
     <Header />
+    test
     <main class="App-main">
       <Router>
         <Route path='/load' component={() => <Counter initialValue={50} maxValue={1000} recurse={false} />} />
