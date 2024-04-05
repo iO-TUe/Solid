@@ -11,7 +11,7 @@ const Gauge: Component<{ value: number, max: number, recurse: boolean }> = (prop
   // console.log("Script: Gauge")
   return <>
     {/* {console.log("Render: Gauge")} */}
-    <div role='feed' class="wrapper" onclick={() => setBool(true)} >
+    <div role='feed' class="g-wrapper" onclick={() => setBool(true)} >
       <svg viewBox="0 0 120 120" class="gauge">
         <defs>
           <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
