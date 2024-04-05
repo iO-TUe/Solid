@@ -10,7 +10,7 @@ render(() =>
     <Header />
     <main class="App-main">
       <Router>
-        <Route path='/load' component={() => <Counter initialValue={50} maxValue={100} recurse={false} />} />
+        <Route path='/load' component={() => <Counter initialValue={50} maxValue={1000} recurse={false} />} />
         <Route path='/' component={() => <Counter initialValue={80} maxValue={13} recurse={true} />} />
       </Router>
     </main>

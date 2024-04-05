@@ -29,8 +29,8 @@ const Gauge: Component<{ value: number, max: number, recurse: boolean }> = (prop
       <span class="value">{props.value}</span>
     </div>
     {(bool() && props.max > 0) && <div class="recurse">
-      <Gauge value={props.value * 2} max={props.max - 1} recurse={true} />
-      <Gauge value={Math.round(props.value / 2)} max={props.max - 1} recurse={true} />
+      <Gauge value={props.value + 1} max={props.max - 1} recurse={true} />
+      <Gauge value={props.value - 1} max={props.max - 1} recurse={true} />
     </div>}
   </>
 }
