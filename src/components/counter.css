@@ -1,5 +1,4 @@
- .wrapper,
- .counters {
+ .wrapper {
    display: flex;
    align-items: center;
    justify-content: center;
@@ -8,4 +7,5 @@
 
  .counters:has(.recurse) {
    display: flex;
+   align-items: center;
  }
