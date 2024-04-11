@@ -12,7 +12,10 @@ export default function Counter(props: { initialValue: number, maxValue: number,
         if (count() > 0) setCount(count() - 1)
     }
 
+    // console.log("Script: Counter")
+
     return <>
+        {/* {console.log("Render: Counter")} */}
         <div class="wrapper">
             <Button disabled={count() === 0} fn={subtract} sign="-" />
             <div class="counters">
