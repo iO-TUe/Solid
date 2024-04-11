@@ -1,0 +1,11 @@
+ input {
+     width: 100%;
+ }
+
+ .list {
+     padding-inline-start: 0;
+ }
+
+ #counters .counters {
+     display: flex;
+ }
