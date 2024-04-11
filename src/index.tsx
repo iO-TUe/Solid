@@ -1,4 +1,3 @@
-/* @refresh reload */
 import { Route, Router } from '@solidjs/router'
 import { render } from 'solid-js/web'
 import Counter from './components/counter'

@@ -8,9 +8,7 @@ const Gauge: Component<{ value: number, max: number, recurse: boolean }> = (prop
     setTimeout(() => setBool(props.recurse), 0)
   })
 
-  // console.log("Script: Gauge")
   return <>
-    {/* {console.log("Render: Gauge")} */}
     <div role='feed' class="g-wrapper" onclick={() => setBool(true)} >
       <svg viewBox="0 0 120 120" class="gauge">
         <defs>
