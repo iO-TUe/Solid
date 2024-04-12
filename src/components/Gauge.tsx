@@ -1,7 +1,7 @@
 import { Component, createEffect, createSignal } from 'solid-js'
 import './gauge.css'
 
-const Gauge: Component<{ value: number, max: number, recurse: boolean, fn?: () => number }> = (props) => {
+const Gauge: Component<{ value: number, max: number, recurse: boolean }> = (props) => {
   const [bool, setBool] = createSignal(false)
 
   createEffect(() => {
