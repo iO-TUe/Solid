@@ -5,13 +5,12 @@ import Gauge from './gauge'
 
 export default function Counter(props: { initialValue: number, maxValue: number, recurse: boolean }) {
     const [count, setCount] = createSignal(props.initialValue)
-    const add = () => {
+    function add() {
         if (count() < 100) setCount(count() + 1)
     }
-    const subtract = () => {
+    function subtract() {
         if (count() > 0) setCount(count() - 1)
     }
-
     // console.log("Script: Counter")
 
     return <>
