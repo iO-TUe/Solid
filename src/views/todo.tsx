@@ -32,7 +32,7 @@ const Todo: Component = () => {
         <section id="todo">
             <label >
                 <h2>Add new item</h2>
-                <input ref={i} disabled id="input" value={input()} onInput={(ev) => setInput(ev.target.value)} onKeyDown={addItem} />
+                <input ref={i!} disabled id="input" value={input()} onInput={(ev) => setInput(ev.target.value)} onKeyDown={addItem} />
             </label>
             <ul class="list">
                 <For each={items}>{(item) =>
