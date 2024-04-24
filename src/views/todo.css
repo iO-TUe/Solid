@@ -6,6 +6,10 @@
      padding-inline-start: 0;
  }
 
+ #counters {
+     height: 10vh;
+ }
+
  #counters .counters {
      display: flex;
  }

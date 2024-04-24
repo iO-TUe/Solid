@@ -1,7 +1,7 @@
-import { For, createSignal, onMount, type Component } from 'solid-js'
+import { For, onMount, type Component } from 'solid-js'
 
 import { createStore } from 'solid-js/store'
-import Counter from "../components/counter"
+import Counter from "../components/counter.gen"
 import Item from "../components/item"
 import './todo.css'
 
@@ -10,13 +10,12 @@ const Todo: Component = () => {
 
     let id = 0
     const [items, setItems] = createStore<{ id: number, text: string }[]>([])
-    const [input, setInput] = createSignal('')
-    let i: HTMLInputElement
+    let input: HTMLInputElement
 
     function addItem({ key }: KeyboardEvent) {
-        if (key === "Enter" && input()) {
-            setItems([...items, { id: id++, text: input() }])
-            setInput('')
+        if (key === "Enter" && input.value) {
+            setItems([...items, { id: id++, text: input.value }])
+            input.value = ''
         }
     }
 
@@ -25,14 +24,14 @@ const Todo: Component = () => {
     }
 
     onMount(() => {
-        i.disabled = false
+        input.disabled = false
     })
 
     return <>
         <section id="todo">
             <label >
                 <h2>Add new item</h2>
-                <input ref={i!} disabled id="input" value={input()} onInput={(ev) => setInput(ev.target.value)} onKeyDown={addItem} />
+                <input ref={input!} id="input" onKeyUp={addItem} disabled />
             </label>
             <ul class="list">
                 <For each={items}>{(item) =>
@@ -41,7 +40,7 @@ const Todo: Component = () => {
             </ul>
         </section>
         <section id="counters">
-            <Counter initialValue={50} maxValue={500} recurse={false} />
+            <Counter initialValue={50} maxValue={5} recurse={false} />
         </section>
     </>
 }

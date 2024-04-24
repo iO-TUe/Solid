@@ -12,7 +12,7 @@ render(() =>
       <Router>
         <Route path='/todo' component={() => <Todo />} />
         <Route path='/load' component={() => <Counter initialValue={50} maxValue={1000} recurse={false} />} />
-        <Route path='/' component={() => <Counter initialValue={80} maxValue={12} recurse={true} />} />
+        <Route path='/' component={() => <Counter initialValue={80} maxValue={10} recurse={true} />} />
       </Router>
     </main>
   </div>
